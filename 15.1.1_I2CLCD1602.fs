@@ -13,7 +13,7 @@ variable fd_
 variable pcf8574_address
 variable lcdhd
 
-72 CONSTANT BASE1
+64 CONSTANT BASE1
 
 BASE1 0 + CONSTANT RS
 BASE1 1 + CONSTANT RW
@@ -75,14 +75,14 @@ VARIABLE second
 : blink			
 	BASE1 pcf8574_address @ pcf8574Setup drop
 
-	72 OUTPUT pinMode
-	73 OUTPUT pinMode
-	74 OUTPUT pinMode
-	75 OUTPUT pinMode
-	76 OUTPUT pinMode
-	77 OUTPUT pinMode
-	78 OUTPUT pinMode
-	79 OUTPUT pinMode
+	64 OUTPUT pinMode
+	65 OUTPUT pinMode
+	66 OUTPUT pinMode
+	67 OUTPUT pinMode
+	68 OUTPUT pinMode
+	69 OUTPUT pinMode
+	70 OUTPUT pinMode
+	71 OUTPUT pinMode
 	LED HIGH digitalWrite
 	RW LOW digitalWrite
 	2 16 4 RS EN D4 D5 D6 D7 0 0 0 0 lcdInit lcdhd !
