@@ -7,6 +7,7 @@
 marker -blink
 
 include wiringPi.fs
+wiringPiSetup drop
 
 
 0 constant buzzerPin
@@ -18,7 +19,6 @@ include wiringPi.fs
 
 : blink
 	." Program is starting ... " CR
-	wiringPiSetup drop
 	
 	buzzerPin OUTPUT pinMode
 	buttonPin INPUT pinMode

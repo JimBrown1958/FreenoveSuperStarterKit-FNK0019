@@ -7,11 +7,11 @@
 marker -blink
 
 include wiringPi.fs
-wiringPiSetup DROP
+wiringPiSetup drop
 
 
 1 constant ledPin
-ledPin 0 100 softPwmCreate DROP
+ledPin 0 100 softPwmCreate drop
 
 ." Program is Starting " CR
 

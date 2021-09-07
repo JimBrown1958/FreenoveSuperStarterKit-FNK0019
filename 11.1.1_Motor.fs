@@ -7,6 +7,7 @@
 marker -blink
 
 include wiringPi.fs
+wiringPiSetup drop
 
 2 constant motorPin1
 0 constant motorPin2
@@ -25,7 +26,6 @@ variable adcValue
 
 fvariable readvalue
 
-wiringPiSetup drop
 0 chn !  
 0x84 cmd !
 0x4b address !

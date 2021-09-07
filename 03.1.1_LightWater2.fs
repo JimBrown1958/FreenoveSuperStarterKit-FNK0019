@@ -7,6 +7,7 @@
 marker -blink
 
 include wiringPi.fs
+wiringPiSetup drop
 
 10 CONSTANT ledCounts
 VARIABLE pins ledCounts CELLS ALLOT
@@ -21,7 +22,6 @@ VARIABLE pins ledCounts CELLS ALLOT
 
 : blink
 	." Program is starting ... " CR
-	wiringPiSetup drop
 	ledInit
 	setPinmode
 	BEGIN

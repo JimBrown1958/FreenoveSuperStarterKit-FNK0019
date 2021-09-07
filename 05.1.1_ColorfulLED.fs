@@ -10,6 +10,8 @@ include wiringPi.fs
 require random.fs
 rnd 
 drop
+wiringPiSetup drop
+
 
 0 constant ledPinRed
 1 constant ledPinGreen
@@ -21,8 +23,6 @@ variable b
 : setupLedPin ledPinRed 0 100 softPwmCreate ledPinGreen 0 100 softPwmCreate ledPinBlue 0 100 softPwmCreate ;
 
 : setLedColor  ledPinRed r @ softPwmWrite ledPinGreen g @ softPwmWrite ledPinBlue b @ softPwmWrite ;
-
-wiringPiSetup drop
 
 : blink
 	setupLedPin

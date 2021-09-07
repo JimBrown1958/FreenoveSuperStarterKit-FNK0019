@@ -7,6 +7,7 @@
 marker -blink
 
 include wiringPi.fs
+wiringPiSetup drop
 
 variable fd_
 variable address

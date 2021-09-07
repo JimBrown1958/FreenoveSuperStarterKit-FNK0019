@@ -7,6 +7,7 @@
 marker -blink
 
 include wiringPi.fs
+wiringPiSetup drop
 
 variable fd_
 variable address
@@ -14,9 +15,8 @@ variable cmd
 variable chn
 variable adcValue
 fvariable voltage
-0 constant ledPin
 
-wiringPiSetup drop
+0 constant ledPin
 0 chn !  
 0x84 cmd !
 0x4b address !
