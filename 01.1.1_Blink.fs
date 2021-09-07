@@ -16,8 +16,20 @@ ledPin OUTPUT pinMode
 
 : startMge    ." Program is starting ..." CR ;
 : pinUsedMge  ." Using pin " ledPin . ;
+: onMge       ." led turned on >>>" CR ;
+: offMge      ." led turned off >>>" CR ;
 
 : ledOn       ledPin HIGH digitalWrite ;
 : ledOff      ledPin LOW digitalWrite ;
 
-: blink       startMge pinUsedMge begin ledOn ." led turned on >>>" CR 1000 delay ledOff ." led turned off >>>" CR 1000 delay again ;
+: blink     startMge 
+			pinUsedMge 
+			begin 
+				ledOn 
+				onMge 
+				1000 delay 
+				ledOff 
+				offMge 
+				1000 delay 
+			again 
+;

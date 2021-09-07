@@ -32,7 +32,8 @@ fd_ @ 0 wiringPiI2CWrite  drop  \ found valid device if stack = 0
 
 : ?ADS7830      fd_ @ 0 wiringPiI2CWrite 0= if ." ADS7830 found" ELSE ." ADS7830 not found" THEN ;
 : readState     fd_ @ cmd @ wiringPiI2CWrite  drop fd_ @ wiringPiI2CRead  adcValue ! ;
-: blink         begin readState 
+: blink         begin 
+					  readState 
                       adcValue @ s>f 255e f/ 3.3e f* voltage f!
                       10e voltage f@ f* 3.3e voltage f@ f- f/ Rt f!
                       1e 1e 298.15e f/ Rt f@ 10e f/ flog 3950e f/ f+ f/ tempK f!

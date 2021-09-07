@@ -22,4 +22,12 @@ buttonPin PUD_UP pullUpDnControl
 : buttonRead buttonPin digitalRead ;
 
 
-: blink ." Program is starting... " CR begin buttonRead 0= IF  ledOn ." Button pressed, led turned on >>> " CR ELSE ledOff ." Button is released, led turned off " CR THEN again ;
+: blink 
+	." Program is starting... " CR 
+	begin 
+		buttonRead 0= IF  
+			ledOn ." Button pressed, led turned on >>> " CR 
+		ELSE ledOff ." Button is released, led turned off " CR 
+		THEN 
+	again 
+;

@@ -53,7 +53,7 @@ buttonPin PUD_UP pullUpDnControl
 						THEN
 					THEN
 				ELSE
-				\	." Button is released!" CR
+					." Button is released!" CR
 				THEN
 			THEN
 			ledPin ledState @ digitalWrite
