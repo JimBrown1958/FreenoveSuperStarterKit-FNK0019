@@ -6,9 +6,7 @@ deb [arch=armhf] https://net2o.de/debian testing main
 EOF
 sudo vi /etc/apt/sources.list.d/net2o.list
 
-sudo wget -O - https://net2o.de/bernd@net
-
-sudo apt install libtool-bin
+sudo wget -O - https://net2o.de/bernd@net2o.de-yubikey.pgp.asc | sudo apt-key add -
 
 sudo apt update
 sudo apt install gforth
