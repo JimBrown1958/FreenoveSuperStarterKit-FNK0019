@@ -1,21 +1,37 @@
-sudo apt-get install gforth
+To install gforth
+=================
+sudo apt install apt-transport-https
+sudo cat >/etc/apt/sources.list.d/net2o.list <<EOF
+deb [arch=armhf] https://net2o.de/debian testing main
+EOF
+sudo vi /etc/apt/sources.list.d/net2o.list
 
+sudo wget -O - https://net2o.de/bernd@net
+
+sudo apt install libtool-bin
+
+sudo apt update
+sudo apt install gforth
+
+To install Forth wiringPi
+==========================
+git clone https://github.com/JimBrown1958/FreenoveSuperStarterKit-FNK0019.git
 sudo apt-get install libtool-bin
 
-
-
-
-cd /tmp
-wget https://project-downloads.drogon.net/wiringpi-latest.deb
-sudo dpkg -i wiringpi-latest.deb
+To install WiringPi for Freenove kit
+====================================
+git clone https://github.com/WiringPi/WiringPi
+cd WiringPi
+./build
 
 gpio -v
 
+To install Freenove Project code (C, Python, Java, Scratch)
+===========================================================
+cd
+git clone --depth 1 https://github.com/freenove/Freenove_Super_Starter_Kit_for_Raspberry_Pi
+mv Freenove_Super_Starter_Kit_for_Raspberry_Pi/ Freenove_Kit/
 
-
-
-
-https://github.com/JimBrown1958/FreenoveSuperStarterKit-FNK0019.git
 
 The first time you use wiringPi.fs, Gforth will build a library in your /root/.gforth/libcc-named/.libs/ directory. Subsequently, Gforth will reuse that cached library. Note that Gforth will continue to use that cached library even if you make your own changes to wiringPi.fs, so if you do make changes, you need to delete the libraries in that directory or change the name for the c-library declaration in wiringPi.fs.
 
