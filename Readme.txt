@@ -2,7 +2,7 @@ To install gforth
 =================
 sudo apt install apt-transport-https
 sudo cat >/etc/apt/sources.list.d/net2o.list <<EOF
-deb [arch=armhf] https://net2o.de/debian testing main
+deb [arch=armhf] https://net2o.de/debian stable main
 EOF
 sudo vi /etc/apt/sources.list.d/net2o.list
 
