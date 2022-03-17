@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -LightWater
+    -LightWater
 [endif]
-marker -blink
+marker -LightWater
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -14,7 +14,7 @@ VARIABLE pins  ledCounts CELLS ALLOT
 
 : ledInit 1 ledCounts + 0 DO i pins i CELLS + ! loop ;
 
-: blink
+: LightWater
 	." Program is starting ... " CR
 	ledInit
 	1 ledCounts + 0 DO i CELLS pins + @ OUTPUT pinMode loop 

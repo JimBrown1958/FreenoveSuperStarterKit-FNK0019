@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -ButtonLED
+    -ButtonLED
 [endif]
-marker -blink
+marker -ButtonLED
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -22,7 +22,7 @@ buttonPin PUD_UP pullUpDnControl
 : buttonRead buttonPin digitalRead ;
 
 
-: blink 
+: ButtonLED
 	." Program is starting... " CR 
 	begin 
 		buttonRead 0= IF  

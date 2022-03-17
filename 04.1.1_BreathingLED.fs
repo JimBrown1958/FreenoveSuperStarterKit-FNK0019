@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -BreathingLED
+    -BreathingLED
 [endif]
-marker -blink
+marker -BreathingLED
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -15,7 +15,7 @@ ledPin 0 100 softPwmCreate drop
 
 ." Program is Starting " CR
 
-: blink
+: BreathingLED
 	begin
 		100 0 do ledPin i softPwmWrite 120 delay loop
 		300 delay
