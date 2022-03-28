@@ -6,6 +6,8 @@
 [endif]
 marker -I2CLCD1602
 
+include wiringPiDev.fs
+
 include wiringPi.fs
 wiringPiSetup drop
 
