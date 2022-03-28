@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -LEDMATRIX
+    -LEDMATRIX
 [endif]
-marker -blink
+marker -LEDMATRIX
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -55,7 +55,7 @@ DROP
 ;
 
 
-: blink 
+: LEDMATRIX 
 ." program is Starting ... " CR
 dataPin  OUTPUT pinMode
 latchPin OUTPUT pinMode

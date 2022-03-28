@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -MOTOR
+    -MOTOR
 [endif]
-marker -blink
+marker -MOTOR
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -38,7 +38,7 @@ fd_ @ 0 wiringPiI2CWrite  drop  \ found valid device if stack = 0
 
 : map toHigh toLow f- readvalue f@ fromLow f- f* fromHigh fromLow f- f/ toLow f+ f>s abs ;	
 
-: motor adcValue @ s>f fabs 128e f- readValue f!
+: motor_movement adcValue @ s>f fabs 128e f- readValue f!
 	readValue f@ f>s 0> if 
 			motorPin1 HIGH digitalWrite 
 			motorPin2 LOW digitalWrite 
@@ -62,7 +62,7 @@ fd_ @ 0 wiringPiI2CWrite  drop  \ found valid device if stack = 0
 
 : readState 	fd_ @ cmd @ wiringPiI2CWrite  drop fd_ @ wiringPiI2CRead  adcValue ! ;
 
-: blink 
+: MOTOR 
 	enablePin OUTPUT pinMode 
 	motorPin1 OUTPUT pinMode 
 	motorPin2 OUTPUT pinMode
@@ -71,7 +71,7 @@ fd_ @ 0 wiringPiI2CWrite  drop  \ found valid device if stack = 0
 	
 	Begin readstate 
 		." ADC value : " adcValue @ . CR
-		motor
+		motor_movement
 		100 delay
 	again
 ;

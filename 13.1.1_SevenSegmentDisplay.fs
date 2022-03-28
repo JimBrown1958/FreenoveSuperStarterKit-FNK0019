@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -SEVENSEGMENTDISPLAY
+    -SEVENSEGMENTDISPLAY
 [endif]
-marker -blink
+marker -SEVENSEGMENTDISPLAY
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -34,7 +34,7 @@ create num 0xc0 C, 0xf9 C, 0xa4 C, 0xb0 C, 0x99 C, 0x92 C, 0x82 C, 0xf8 C, 0x80 
 ;
 
 
-: blink 
+: SEVENSEGMENTDISPLAY 
 	." program is Starting ... " CR
 	dataPin  OUTPUT pinMode
 	latchPin OUTPUT pinMode

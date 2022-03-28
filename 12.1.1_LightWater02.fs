@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -LIGHTWATER
+    -LIGHTWATER
 [endif]
-marker -blink
+marker -LIGHTWATER
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -32,7 +32,7 @@ variable x
         10 delayMicroseconds
     loop
 ;                                                                                                                                                           
-: blink 
+: LIGHTWATER
     ." program is Starting ... " CR
     dataPin  OUTPUT pinMode
     latchPin OUTPUT pinMode

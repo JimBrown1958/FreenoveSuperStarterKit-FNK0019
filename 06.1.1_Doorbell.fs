@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -DOORBELL
+    -DOORBELL
 [endif]
-marker -blink
+marker -DOORBELL
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -17,7 +17,7 @@ wiringPiSetup drop
 : buttonUp buzzerPin LOW digitalWrite ;
 : buttonRead buttonPin digitalRead ;
 
-: blink
+: DOORBELL
 	." Program is starting ... " CR
 	
 	buzzerPin OUTPUT pinMode

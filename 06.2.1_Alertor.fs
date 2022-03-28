@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -ALERTOR
+    -ALERTOR
 [endif]
-marker -blink
+marker -ALERTOR
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -17,7 +17,7 @@ fvariable toneVal
 
 : buttonRead buttonPin digitalRead ;
 
-: alertor 
+: alert_noise 
 	360 0 do 
 		pi 180e f/ i s>f f* fsin sinVal f!
 		sinVal f@ 500e f* 2000e f+ toneVal f!
@@ -27,13 +27,13 @@ fvariable toneVal
 	loop
 ;
 
-: stopAlertor
+: stopAlert_noise
 	buzzerPin 0 softToneWrite
 ;
 
 : buttonRead buttonPin digitalRead ;
 
-: blink
+: ALERTOR
 	." Program is starting ... " CR
 	
 	buzzerPin OUTPUT pinMode
@@ -43,10 +43,10 @@ fvariable toneVal
 	
 	begin
 		buttonRead LOW = IF  
-			alertor
+			alert_noise
 			." Alertor turned on >>> " CR 
 		ELSE 
-			stopAlertor 
+			stopAlert_noise 
 			." Alertor turned off <<< " CR 
 		THEN 
 	again

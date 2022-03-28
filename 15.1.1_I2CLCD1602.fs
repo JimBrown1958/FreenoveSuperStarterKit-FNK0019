@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -I2CLCD1602
+    -I2CLCD1602
 [endif]
-marker -blink
+marker -I2CLCD1602
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -72,7 +72,7 @@ VARIABLE second
 
 : ?PCF8574T 		fd_ @ 0 wiringPiI2CWrite 0= if ." PCF8574T found" ELSE ." PCF8574T not found" THEN ;
 \ : readState 	fd_ @ cmd @ wiringPiI2CWrite  drop fd_ @ wiringPiI2CRead  adcValue ! ;
-: blink			
+: I2CLCD1602			
 	BASE1 pcf8574_address @ pcf8574Setup drop
 
 	64 OUTPUT pinMode

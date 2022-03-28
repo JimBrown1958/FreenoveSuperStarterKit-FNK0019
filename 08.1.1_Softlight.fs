@@ -1,10 +1,10 @@
 #! /usr/bin/env gforth
 
 \ Forget and reload definitions if this file is re-included.
-[ifdef] -blink
-    -blink
+[ifdef] -SOFTLIGHT
+    -SOFTLIGHT
 [endif]
-marker -blink
+marker -SOFTLIGHT
 
 include wiringPi.fs
 wiringPiSetup drop
@@ -31,7 +31,7 @@ fd_ @ 0 wiringPiI2CWrite  drop  \ found valid device if stack = 0
 
 : ?ADS7830 		fd_ @ 0 wiringPiI2CWrite 0= if ." ADS7830 found" ELSE ." ADS7830 not found" THEN ;
 : readState 	fd_ @ cmd @ wiringPiI2CWrite  drop fd_ @ wiringPiI2CRead  adcValue ! ;
-: blink			begin readState 
+: SOFTLIGHT		begin readState 
 	adcValue @ s>f 255e f/ 3.3e f* voltage f!
 	ledPin 100e 255e f/ adcValue @ s>f f* f>s softPwmWrite
 	." ADC value : " adcValue @ 4 u.r ."   ,  Voltage : " voltage f@ 5 2 1 f.rdp ." v" CR
