@@ -8,7 +8,7 @@ marker -wiringPi
 
 \ Update this identifier when the API changes, so that Gforth
 \ will build a new cached library.
-c-library wiringPi_2_61
+c-library wiringPi_2_70
 
 s" wiringPi" add-lib
 
