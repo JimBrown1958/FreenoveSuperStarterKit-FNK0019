@@ -68,7 +68,7 @@ s" wiringPi" add-lib
 1 constant MSBFIRST
 
 \ LCD constant
-8 constant MAX_LCDS
+\ 8 constant MAX_LCDS
 
 \ Pi model types and version numbers
 \      Intended for the GPIO program Use at your own risk.
@@ -217,12 +217,12 @@ c-function pcf8574Setup pcf8574Setup n n -- n
 \ c-function lcdCursor lcdCursor n n -- void
 \ c-function lcdCursorBlink lcdCursorBlink n n -- void
 \ c-function lcdSendCommand lcdSendCommand n n -- void
-c-function lcdPosition lcdPosition n n n -- void
+\ c-function lcdPosition lcdPosition n n n -- void
 \ c-function lcdCharDef lcdCharDef n n a -- void
 \ c-function lcdPutChar lcdPutchar n n -- void
 \ c-function lcdPuts lcdPuts n a -- void
-c-function lcdPrintf lcdPrintf n a a -- void
-c-function lcdInit lcdInit n n n n n n n n n n n n n -- n
+\ c-function lcdPrintf lcdPrintf n a a -- void
+\ c-function lcdInit lcdInit n n n n n n n n n n n n n -- n
 
 end-c-library
 
