@@ -19,7 +19,6 @@ s" wiringPi" add-lib
 \c #include <wiringShift.h>
 \c #include <softPwm.h>
 \c #include <softTone.h>
-\c #include <lcd.h>
 \c #include <pcf8574.h>
 
 
@@ -66,9 +65,6 @@ s" wiringPi" add-lib
 \ wiringShift variable
 0 constant LSBFIRST  
 1 constant MSBFIRST
-
-\ LCD constant
-\ 8 constant MAX_LCDS
 
 \ Pi model types and version numbers
 \      Intended for the GPIO program Use at your own risk.
@@ -207,22 +203,6 @@ c-function softToneWrite softToneWrite n n -- void
 \ pcf8574.h
 
 c-function pcf8574Setup pcf8574Setup n n -- n
-
-
-\ lcd.h
-\ Not fully working yet, values are output
-\ c-function lcdHome lcdHome n -- void
-\ c-function lcdClear lcdClear n -- void
-\ c-function lcdDisplay lcdDisplay n n -- void
-\ c-function lcdCursor lcdCursor n n -- void
-\ c-function lcdCursorBlink lcdCursorBlink n n -- void
-\ c-function lcdSendCommand lcdSendCommand n n -- void
-\ c-function lcdPosition lcdPosition n n n -- void
-\ c-function lcdCharDef lcdCharDef n n a -- void
-\ c-function lcdPutChar lcdPutchar n n -- void
-\ c-function lcdPuts lcdPuts n a -- void
-\ c-function lcdPrintf lcdPrintf n a a -- void
-\ c-function lcdInit lcdInit n n n n n n n n n n n n n -- n
 
 end-c-library
 

@@ -36,6 +36,13 @@ pcf8574_address @ wiringPiI2CSetup fd_ !
 : open-output ( addr u -- )  w/o create-file throw to fd-out ;
 : close-input ( -- )  fd-in close-file throw ;
 : close-output ( -- )  fd-out close-file throw ;
+: my-u. ( u -- )
+       \ Simplest use of pns.. behaves like Standard u.
+       0              \ convert to unsigned double
+       <<#            \ start conversion
+       #s             \ convert all digits
+       #>             \ complete conversion
+       #>> ;          \ release hold area
 256 CONSTANT max-line
 VARIABLE LineLen
 fVARIABLE CPUtemp
@@ -43,6 +50,8 @@ fVARIABLE CPUtemp
 VARIABLE hour
 VARIABLE minute
 VARIABLE second
+16 buffer: lcdTime 
+16 buffer: lcdTemp
 
 : ?temp
 	s" /sys/class/thermal/thermal_zone0/temp" open-input
@@ -51,8 +60,10 @@ VARIABLE second
 	LineLen !
 	pad LineLen @ >float 1000e f/ CPUtemp f!
 	." CPU temperature : " CPUtemp f@ 6 3 1 f.rdp
+        s" CPU Temp: " lcdTemp place
+        CPUtemp f@ 6 3 1 f>str-rdp lcdTemp +place 
 	lcdhd @ 0 0 lcdPosition
-	lcdhd @  pad LineLen @ lcdPrintf
+        lcdhd @ lcdTemp count  lcdPrintf
 	close-input
 ;
 
@@ -65,12 +76,18 @@ VARIABLE second
 	minute ! 
 	second !
 	CR ." Time: " hour ? ." :" minute ? ." :" second ? CR
+        s" Time: "  lcdTime place
+        hour @ my-u. lcdTime +place
+        s" :" lcdTime +place
+        minute @ my-u. lcdTime +place
+        s" :" lcdTime +place
+        second @ my-u. lcdTime +place 
 	lcdhd @ 0 1 lcdPosition
-	lcdhd @ s" Time" lcdPrintf
+	lcdhd @ lcdTime count lcdPrintf
 ;
 
 
-: ?PCF8574T 		fd_ @ 0 wiringPiI2CWrite 0= if ." PCF8574T found" ELSE ." PCF8574T not found" THEN ;
+\ : ?PCF8574T 		fd_ @ 0 wiringPiI2CWrite 0= if ." PCF8574T found" ELSE ." PCF8574T not found" THEN ;
 \ : readState 	fd_ @ cmd @ wiringPiI2CWrite  drop fd_ @ wiringPiI2CRead  adcValue ! ;
 : I2CLCD1602			
 	BASE1 pcf8574_address @ pcf8574Setup drop
@@ -86,7 +103,7 @@ VARIABLE second
 	LED HIGH digitalWrite
 	RW LOW digitalWrite
 	2 16 4 RS EN D4 D5 D6 D7 0 0 0 0 lcdInit lcdhd !
-	." lcdhd: " lcdhd ? CR
+	\ ." lcdhd: " lcdhd ? CR
 
 
 	begin 
