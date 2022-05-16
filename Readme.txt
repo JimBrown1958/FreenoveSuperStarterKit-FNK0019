@@ -1,10 +1,15 @@
 To install gforth
 =================
 sudo apt install apt-transport-https
+
+Note: use armhf for 32 bit PI OS and arm64 for 64 bit PI OS 
 sudo cat >/etc/apt/sources.list.d/net2o.list <<EOF
 deb [arch=armhf] https://net2o.de/debian stable main
 EOF
+
+if previous steps fail then edit file and add the line to:
 sudo vi /etc/apt/sources.list.d/net2o.list
+deb [arch=armhf] https://net2o.de/debian stable main
 
 sudo wget -O - https://net2o.de/bernd@net2o.de-yubikey.pgp.asc | sudo apt-key add -
 
