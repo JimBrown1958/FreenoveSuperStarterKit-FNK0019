@@ -40,7 +40,7 @@ mv Freenove_Super_Starter_Kit_for_Raspberry_Pi/ Freenove_Kit/
 
 The first time you use wiringPi.fs, Gforth will build a library in your /root/.gforth/libcc-named/.libs/ directory (on 64bit PI OS the path is /home/pi/.cache/gforth/arm64/libcc-tmp/.libs). Subsequently, Gforth will reuse that cached library. Note that Gforth will continue to use that cached library even if you make your own changes to wiringPi.fs, so if you do make changes, you need to delete the libraries in that directory or change the name for the c-library declaration in wiringPi.fs.
 
-Fixed issue? (kept for future work)
+Deprecated as issue now fixed? (kept for future work)
 ===================================
 there is a hack for exercise 15,the wiringPi library needs to be rebuilt until I find out how to include wiringPiDev.  The files lcd.c and lcd.h have to be copied from $HOME/WiringPi/devLib to $HOME/WiringPi/wiringPi and the lines in the file Makefile changed from:
 softPwm.c softTone.c
