@@ -16,7 +16,7 @@ VARIABLE pins ledCounts CELLS ALLOT
 : setPinmode 	1 ledCounts + 0 DO i CELLS pins + @ OUTPUT pinMode loop ;
 : leftToRight 	1 ledCounts + 0 DO i CELLS pins + @ LOW digitalWrite 100 DELAY i CELLS pins + @ HIGH digitalWrite loop ;
 : rightToLeft 	0  1 ledCounts + DO i CELLS pins + @ LOW digitalWrite 100 DELAY i CELLS pins + @ HIGH digitalWrite -1 +loop ;
-\ Only for cleanup, can only be run after blink has completed
+\ Only for cleanup, can only be run after LightWater has completed
 : allOn       	1 ledCounts + 0 DO i CELLS pins + @ LOW digitalWrite loop ;
 : allOff      	1 ledCounts + 0 DO i CELLS pins + @ HIGH digitalWrite loop ;
 
