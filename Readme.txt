@@ -1,5 +1,12 @@
-To install gforth
+To install gforth  
 =================
+(as of Jan 2023, don't use this method to install, 
+ use 
+    sudo apt intall gforth
+ This will install an old version of gforth but it should still work.
+ The latest version of gforth relies on at least version GLIBC 2.33
+ the current installed version on RPI is 2.31)
+
 1)  sudo apt install apt-transport-https
 
 2a) Note: use armhf for 32 bit PI OS and arm64 for 64 bit PI OS 
