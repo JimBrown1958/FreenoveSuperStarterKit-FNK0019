@@ -27,5 +27,5 @@ VARIABLE pins ledCounts CELLS ALLOT
 	BEGIN
 		leftToRight
 		rightToLeft
-	AGAIN
+	key? until
 ;

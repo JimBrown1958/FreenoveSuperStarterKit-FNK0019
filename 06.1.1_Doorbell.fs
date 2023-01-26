@@ -31,5 +31,5 @@ wiringPiSetup drop
 			ELSE 
 				buttonUp ." Buzzer turned off " CR 
 			THEN 
-	again 
+	key? until
 ;

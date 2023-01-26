@@ -21,5 +21,5 @@ ledPin 0 100 softPwmCreate drop
 		300 delay
 		0 100 do ledPin i softPwmWrite 120 delay -1 +loop
 		300 delay
-	again
+	key? until
 ;

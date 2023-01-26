@@ -54,5 +54,5 @@ variable x
             x @ 2/ x ! 
             100 delay
         loop
-    again
+    key? until
 ;

@@ -58,5 +58,5 @@ buttonPin PUD_UP pullUpDnControl
 			THEN
 			ledPin ledState @ digitalWrite
 			reading @ lastbuttonState !
-		again	
+		key? until
 ;

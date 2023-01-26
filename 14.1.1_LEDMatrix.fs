@@ -85,6 +85,6 @@ begin
                 	LOOP
 		LOOP
 	8 +LOOP
-again
+key? until
 ;
 

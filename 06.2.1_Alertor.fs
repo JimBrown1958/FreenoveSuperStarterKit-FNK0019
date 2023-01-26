@@ -49,5 +49,5 @@ fvariable toneVal
 			stopAlert_noise 
 			." Alertor turned off <<< " CR 
 		THEN 
-	again
+	key? until
 ;	

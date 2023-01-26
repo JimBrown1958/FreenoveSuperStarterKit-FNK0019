@@ -110,6 +110,6 @@ VARIABLE second
 		?temp 
 		printDateTime
 		500 delay
-	again 
+	key? until 
 ;
 

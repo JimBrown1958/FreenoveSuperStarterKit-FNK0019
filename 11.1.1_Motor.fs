@@ -69,9 +69,10 @@ fd_ @ 0 wiringPiI2CWrite  drop  \ found valid device if stack = 0
 	
 	enablePin 0 100 softPwmCreate
 	
-	Begin readstate 
+	Begin 
+                readstate 
 		." ADC value : " adcValue @ . CR
 		motor_movement
 		100 delay
-	again
+	key? until
 ;

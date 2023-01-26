@@ -29,5 +29,6 @@ buttonPin PUD_UP pullUpDnControl
 			ledOn ." Button pressed, led turned on >>> " CR 
 		ELSE ledOff ." Button is released, led turned off " CR 
 		THEN 
-	again 
+	 key? until
+  ledOff
 ;

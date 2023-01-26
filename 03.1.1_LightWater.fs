@@ -22,5 +22,5 @@ VARIABLE pins  ledCounts CELLS ALLOT
 		 1 ledCounts + 0 DO i CELLS pins + @ LOW digitalWrite 100 DELAY i CELLS pins + @ HIGH digitalWrite loop
 
 		 0  1 ledCounts + DO i CELLS pins + @ LOW digitalWrite 100 DELAY i CELLS pins + @ HIGH digitalWrite -1 +loop
-	again
+        key? until	
 ;

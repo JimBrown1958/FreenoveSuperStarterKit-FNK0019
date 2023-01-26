@@ -42,5 +42,5 @@ variable bvar
 		CR
 	
 		1000 delay
-	again
+	key? until
 ;
