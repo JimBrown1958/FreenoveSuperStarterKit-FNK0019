@@ -15,7 +15,7 @@ ledPin OUTPUT pinMode
 
 
 : startMge    ." Program is starting ..." CR ;
-: pinUsedMge  ." Using pin " ledPin . ;
+: pinUsedMge  ." Using pin " ledPin . CR ;
 : onMge       ." led turned on >>>" CR ;
 : offMge      ." led turned off >>>" CR ;
 
