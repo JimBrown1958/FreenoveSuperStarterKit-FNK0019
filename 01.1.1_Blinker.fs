@@ -31,5 +31,6 @@ ledPin OUTPUT pinMode
 				ledOff 
 				offMge 
 				1000 delay 
-			again 
+			key? until
+  ledOff 
 ;
