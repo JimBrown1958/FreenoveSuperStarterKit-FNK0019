@@ -1,12 +1,13 @@
 To install gforth  
 =================
-(as of Jan 2023, don't use this method to install, 
- use 
+as of Jan 2023, don't use the method to install dev version of gforth on to raspberry Pi OS, 
+instead use the version in the repo: 
     sudo apt intall gforth
  This will install an old version of gforth but it should still work.
  The latest version of gforth relies on at least version GLIBC 2.33
- the current installed version on RPI is 2.31)
+ the current installed version on RPI is 2.31
 
+To install dev version:
 1)  sudo apt install apt-transport-https
 
 2a) Note: use armhf for 32 bit PI OS and arm64 for 64 bit PI OS 
@@ -46,6 +47,14 @@ mv Freenove_Super_Starter_Kit_for_Raspberry_Pi/ Freenove_Kit/
 
 
 The first time you use wiringPi.fs, Gforth will build a library in your /root/.gforth/libcc-named/.libs/ directory (on 64bit PI OS the path is /home/pi/.cache/gforth/arm64/libcc-tmp/.libs). Subsequently, Gforth will reuse that cached library. Note that Gforth will continue to use that cached library even if you make your own changes to wiringPi.fs, so if you do make changes, you need to delete the libraries in that directory or change the name for the c-library declaration in wiringPi.fs.
+
+To run examples
+===============
+cd to directory containing forth example file
+gforth <program name>
+example:
+gforth 01.1.1_Blinker.fs
+
 
 Deprecated as issue now fixed? (kept for future work)
 ===================================
