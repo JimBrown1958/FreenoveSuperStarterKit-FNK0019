@@ -26,8 +26,8 @@ or
 4)  sudo apt update
 5)  sudo apt install gforth*
 
-To install Forth wiringPi
-==========================
+To install Forth examples
+=========================
 git clone https://github.com/JimBrown1958/FreenoveSuperStarterKit-FNK0019.git
 sudo apt-get install libtool-bin
 
@@ -50,7 +50,7 @@ The first time you use wiringPi.fs, Gforth will build a library in your /root/.g
 
 To run examples
 ===============
-cd to directory containing forth example file
+cd to directory containing forth example file (FreenoveSuperStarterKit-FNK0019)
 gforth <program name>
 example:
 gforth 01.1.1_Blinker.fs
