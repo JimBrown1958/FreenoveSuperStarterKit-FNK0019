@@ -13,9 +13,9 @@ include /usr/share/gforth/0.7.9_20231012/arch/arm64/gpios.fs
 ledPin output-pin
 
 
-
-: startMge    ." Program is starting ..." CR ;
-: pinUsedMge  ." Using pin " ledPin . CR ;
+: delay ms ;
+: startMge    CR ." Program is starting ..." CR ;
+: pinUsedMge  ." Using physical pin " ledPin . CR ;
 : onMge       ." led turned on >>>" CR ;
 : offMge      ." led turned off >>>" CR ;
 
@@ -27,10 +27,10 @@ ledPin output-pin
 			begin 
 				ledOn 
 				onMge 
-				1000 delay 
+				2000 delay 
 				ledOff 
 				offMge 
-				1000 delay 
+				2000 delay 
 			key? until
   ledOff 
 ;
