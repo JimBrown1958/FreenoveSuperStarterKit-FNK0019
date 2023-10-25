@@ -1,13 +1,12 @@
 To install gforth  
 =================
-as of Jan 2023, don't use the method to install dev version of gforth on to raspberry Pi OS, 
-instead use the version in the repo: 
+If you are using the pre Bookworm version of raspberry Pi OS, use the gforth version in the repo: 
     sudo apt intall gforth*
  This will install an old version of gforth but it should still work.
  The latest version of gforth relies on at least version GLIBC 2.33
- the current installed version on RPI is 2.31
+ the version on older RPI is 2.31
 
-To install dev version:
+If you are using the latest Bookworm version of raspberry Pi OS, use the following to install gforth dev version:
 1)  sudo apt install apt-transport-https
 
 2a) Note: use armhf for 32 bit PI OS and arm64 for 64 bit PI OS 
