@@ -54,6 +54,9 @@ gforth <program name>
 example:
 gforth 01.1.1_Blinker.fs
 
+Update
+======
+Work on removing dependency on wiringPi is now underway.  I hope to use the gpios.fs file included in gforth.
 
 Deprecated as issue now fixed? (kept for future work)
 ===================================
