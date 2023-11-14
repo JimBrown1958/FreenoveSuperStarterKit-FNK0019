@@ -14,22 +14,22 @@ ledPin output-pin
 
 
 : delay ms ;
-: startMge    CR ." Program is starting ..." CR ;
-: pinUsedMge  ." Using physical pin " ledPin . CR ;
-: onMge       ." led turned on >>>" CR ;
-: offMge      ." led turned off >>>" CR ;
+: startMessage    CR ." Program is starting ..." CR ;
+: pinUsedMessage  ." Using physical pin " ledPin . CR ;
+: onMessage       ." led turned on >>>" CR ;
+: offMessage      ." led turned off >>>" CR ;
 
 : ledOn       ledPin pinset ;
 : ledOff      ledPin pinclr ;
 
-: blinker     startMge 
-			pinUsedMge 
+: blinker  startMessage 
+			pinUsedMessage 
 			begin 
 				ledOn 
-				onMge 
+				onMessage 
 				2000 delay 
 				ledOff 
-				offMge 
+				offMessage 
 				2000 delay 
 			key? until
   ledOff 
