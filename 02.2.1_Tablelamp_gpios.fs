@@ -50,10 +50,8 @@ HIGH buttonPin pin-resmode
 						ledSwitch
 						ledState @  if
 							." turn on LED ... " CR
-							ledOn
 						ELSE
 							." turn off LED ... " CR
-							ledOff
 						THEN
 					THEN
 				ELSE
