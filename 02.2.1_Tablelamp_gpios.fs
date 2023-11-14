@@ -32,10 +32,10 @@ HIGH buttonPin pin-resmode
 : ledOn ( -- )      ledPin pinset ;
 : ledOff ( -- )     ledPin pinclr ;
 : buttonRead ( -- n ) buttonPin pin@ ;
-: ledSwitch  ledState @ 0= IF 1 ledState ! ELSE 0 ledState ! THEN ;
-: millis cputime drop drop drop ;
+: ledSwitch ( -- ) ledState @ 0= IF 1 ledState ! ELSE 0 ledState ! THEN ;
+: millis ( -- n )cputime drop drop drop ;
 
-: Tablelamp     ." Program is starting... " CR 
+: Tablelamp ( -- )    ." Program is starting... " CR 
 		begin
 			buttonRead reading ! 
 			reading @ lastbuttonState @ <>  IF
