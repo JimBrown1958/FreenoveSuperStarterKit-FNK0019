@@ -61,4 +61,5 @@ HIGH buttonPin pin-resmode
 			ledPin ledState @ ledPin pin!
 			reading @ lastbuttonState !
 		key? until
+		ledOff
 ;
