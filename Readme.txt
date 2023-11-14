@@ -57,6 +57,8 @@ gforth 01.1.1_Blinker.fs
 Update
 ======
 Work on removing dependency on wiringPi is now underway.  I hope to use the gpios.fs file included in gforth.
+(Update) 2 modules have now been updated to use the gpios.fs file.  For RPi 4 and RPi400 please use the gpios.fs file in the program directory, there is a small change to allow RPi 400 to be identified correctly.  
+As of now RPi 5 does not work with gpios.fs so use the WiringPi version in the meantime.(future work) 
 
 Deprecated as issue now fixed? (kept for future work)
 ===================================
