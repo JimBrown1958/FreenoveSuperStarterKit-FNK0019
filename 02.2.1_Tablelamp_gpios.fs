@@ -55,7 +55,7 @@ HIGH buttonPin pin-resmode
 						THEN
 					THEN
 				ELSE
-\					." Button is released!" CR
+					." Button is released!" CR
 				THEN
 			THEN
 			ledState @ 0= if ledPin pinclr ELSE ledPin pinset THEN 
