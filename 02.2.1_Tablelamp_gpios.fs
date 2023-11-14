@@ -58,7 +58,7 @@ HIGH buttonPin pin-resmode
 \					." Button is released!" CR
 				THEN
 			THEN
-			ledPin ledState @ ledPin pin!
+			ledPin ledState @ pin!
 			reading @ lastbuttonState !
 		key? until
 		ledOff
