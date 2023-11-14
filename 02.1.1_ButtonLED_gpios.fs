@@ -6,7 +6,7 @@
 [endif]
 marker -ButtonLED
 
-include ../gpios.fs
+include ./gpios.fs
 
 11 constant ledPin
 12 constant buttonPin
@@ -14,11 +14,11 @@ include ../gpios.fs
 
 ledPin output-pin
 buttonPin input-pin
-1 buttonPin pin–resmode 
+1 buttonPin pin-resmode
 
-: ledOn       ledPin pinset ;
-: ledOff      ledPin pinclr ;
-: buttonRead buttonPin pin@ ;
+: ledOn ( -- )      ledPin pinset ;
+: ledOff ( -- )     ledPin pinclr ;
+: buttonRead ( -- n ) buttonPin pin@ ;
 
 
 : ButtonLED

@@ -6,21 +6,21 @@
 [endif]
 marker -blinker
 
-include ../gpios.fs
+include ./gpios.fs
 
 
 11 constant ledPin
 ledPin output-pin
 
 
-: delay ms ;
-: startMessage    CR ." Program is starting ..." CR ;
-: pinUsedMessage  ." Using physical pin " ledPin . CR ;
-: onMessage       ." led turned on >>>" CR ;
-: offMessage      ." led turned off >>>" CR ;
+: delay ( n -- )ms ;
+: startMessage ( -- )   CR ." Program is starting ..." CR ;
+: pinUsedMessage ( -- )  ." Using physical pin " ledPin . CR ;
+: onMessage ( -- )      ." led turned on >>>" CR ;
+: offMessage ( -- )     ." led turned off >>>" CR ;
 
-: ledOn       ledPin pinset ;
-: ledOff      ledPin pinclr ;
+: ledOn ( -- )      ledPin pinset ;
+: ledOff ( -- )     ledPin pinclr ;
 
 : blinker  startMessage 
 			pinUsedMessage 
