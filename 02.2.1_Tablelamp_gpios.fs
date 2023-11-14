@@ -55,7 +55,7 @@ HIGH buttonPin pin-resmode
 						THEN
 					THEN
 				ELSE
-					." Button is released!" CR
+\					." Button is released!" CR
 				THEN
 			THEN
 			ledPin ledState @ ledPin pin!
