@@ -38,10 +38,10 @@ HIGH buttonPin pin-resmode
 		begin
 			buttonRead reading ! 
 			reading @ lastbuttonState @ <>  IF
-				millis lastChangeTime !
+				utime lastChangeTime !
 			THEN
 
-			millis lastChangeTime @ - captureTime > IF
+			utime lastChangeTime @ - captureTime > IF
 				reading @ buttonState @ <> IF
 					reading @  buttonState !
 					buttonState @ LOW = IF
