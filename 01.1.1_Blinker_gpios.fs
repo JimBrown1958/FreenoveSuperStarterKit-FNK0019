@@ -6,7 +6,7 @@
 [endif]
 marker -blinker
 
-include /usr/share/gforth/0.7.9_20231012/arch/arm64/gpios.fs
+include ../gpios.fs
 
 
 11 constant ledPin
