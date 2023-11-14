@@ -13,7 +13,7 @@ include ./gpios.fs
 ledPin output-pin
 
 
-: delay ( n -- )ms ;
+: delay ( n -- ) ms ;
 : startMessage ( -- )   CR ." Program is starting ..." CR ;
 : pinUsedMessage ( -- )  ." Using physical pin " ledPin . CR ;
 : onMessage ( -- )      ." led turned on >>>" CR ;
