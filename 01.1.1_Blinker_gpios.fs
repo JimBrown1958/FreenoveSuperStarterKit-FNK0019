@@ -13,24 +13,20 @@ include ./gpios.fs
 ledPin output-pin
 
 
-: delay ( n -- ) ms ;
+: delay ( n -- ) 2000 ms ;
 : startMessage ( -- )   CR ." Program is starting ..." CR ;
 : pinUsedMessage ( -- )  ." Using physical pin " ledPin . CR ;
 : onMessage ( -- )      ." led turned on >>>" CR ;
 : offMessage ( -- )     ." led turned off >>>" CR ;
 
-: ledOn ( -- )      ledPin pinset ;
-: ledOff ( -- )     ledPin pinclr ;
+: ledOn ( -- )      ledPin pinset onMessage delay ;
+: ledOff ( -- )     ledPin pinclr offMessage delay ;
 
 : blinker  startMessage 
 			pinUsedMessage 
 			begin 
 				ledOn 
-				onMessage 
-				2000 delay 
 				ledOff 
-				offMessage 
-				2000 delay 
 			key? until
   ledOff 
 ;
