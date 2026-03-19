@@ -19,8 +19,8 @@ ledPin output-pin
 : onMessage ( -- )      ." led turned on >>>" CR ;
 : offMessage ( -- )     ." led turned off >>>" CR ;
 
-: ledOn ( -- )      ledPin pinset onMessage delay ;
-: ledOff ( -- )     ledPin pinclr offMessage delay ;
+: ledOn ( -- )      ledPin pinset statusMessage ." on >>>" CRdelay ;
+: ledOff ( -- )     ledPin pinclr statusMessage ." off >>>"delay ;
 
 : blinker  startMessage 
 			pinUsedMessage 
